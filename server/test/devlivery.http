@@ -1,0 +1,92 @@
+
+
+@baseUrl = http://localhost:3000
+
+###
+POST {{baseUrl}}/api/deliveries?preview=true
+Content-Type: application/json
+
+{
+    "testfile": "/data/deliveryTest01.json"
+}
+
+###
+POST {{baseUrl}}/api/deliveries
+Content-Type: application/json
+
+{
+    "testfile": "/data/deliveryTest01.json"
+}
+
+
+###
+POST {{baseUrl}}/api/deliveries?preview=true
+Content-Type: application/json
+
+{
+    "testfiles": [
+        "/data/deliveryAUT01.json",
+        "/data/deliveryAUT02.json",
+        "/data/deliveryAUT03.json",
+        "/data/deliveryAUT04.json",
+        "/data/deliveryAUT05.json",
+        "/data/deliveryAUT06.json",
+        
+        "/data/deliveryITA01.json",
+        
+        "/data/deliveryBEL01.json",
+        "/data/deliveryBEL02.json",
+
+        "/data/deliveryBEL04.json",
+
+        "/data/deliveryGER01.json",
+        "/data/deliveryGER02.json",
+        "/data/deliveryGER03.json",
+
+        "/data/deliveryUSA02.json",
+        "/data/deliveryUSA03.json",
+        "/data/deliveryUSA04.json"
+
+        ]
+}
+###
+POST {{baseUrl}}/api/deliveries
+Content-Type: application/json
+
+{
+    "testfiles": [
+        "/data/deliveryAUT01.json",
+        "/data/deliveryAUT02.json",
+        "/data/deliveryAUT03.json",
+        "/data/deliveryAUT04.json",
+        "/data/deliveryAUT05.json",
+        "/data/deliveryAUT06.json",
+        
+        "/data/deliveryITA01.json",
+        
+        "/data/deliveryBEL01.json",
+        "/data/deliveryBEL02.json",
+
+        "/data/deliveryBEL04.json",
+
+        "/data/deliveryGER01.json",
+        "/data/deliveryGER02.json",
+        "/data/deliveryGER03.json",
+
+        "/data/deliveryUSA02.json",
+        "/data/deliveryUSA03.json",
+        "/data/deliveryUSA04.json"
+
+        ]
+}
+
+
+###
+Error files:
+    "/data/deliveryITA02.json",
+    "/data/deliveryITA03.json",
+    "/data/deliveryITA04.json",
+    "/data/deliveryBEL03.json",
+    "/data/deliveryGER04.json",
+    "/data/deliveryUSA01.json",
+    "/data/deliveryUSA05.json"

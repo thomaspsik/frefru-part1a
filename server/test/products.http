@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:3000
+
+###
+GET {{baseUrl}}/api/products
+
+###
+GET {{baseUrl}}/api/products/country/AUT
+
+###
+GET {{baseUrl}}/api/products/city/Wien

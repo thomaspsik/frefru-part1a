@@ -1,0 +1,21 @@
+{
+  "site": "ITAD",
+  "producer": "Gerina",
+  "deliverydate": "24-11-2025",
+  "items": [
+    {
+      "label": "BioTangerine 2kg Kiste",
+      "charge": "GIA5114-63",
+      "expiredate": "06-01-2026",
+      "units": 70,
+      "buyprice": 1.301
+    },
+    { "label": "Mango 1kg", "charge": "GIA5114-57", "expiredate": "19-12-2025", "units": 44, "buyprice": 1.139 },
+    { "label": "Mangosteen 600g", "charge": "GIA5114-59", "expiredate": "31-12-2025", "units": 48, "buyprice": 1.114 },
+    { "label": "Banana 600g", "charge": "GIA5114+97", "expiredate": "07-01-2026", "units": 70, "buyprice": 0.68 },
+    { "label": "BioTangerine 1kg", "charge": "GIA5114-37", "expiredate": "23-12-2025", "units": 78, "buyprice": 1.84 },
+    { "label": "Banana 1kg", "charge": "GIA5114/46", "expiredate": "26-12-2025", "units": 71, "buyprice": 2.597 },
+    { "label": "Orange 2kg Kiste", "charge": "GIA5114.24", "expiredate": "08-01-2026", "units": 40, "buyprice": 3.191 },
+    { "label": "Mangosteen 1kg", "charge": "GIA5114+60", "expiredate": "22-12-2025", "units": 40, "buyprice": 1.269 }
+  ]
+}

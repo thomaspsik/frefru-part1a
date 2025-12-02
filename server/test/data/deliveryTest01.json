@@ -1,0 +1,23 @@
+{
+  "site": "AUTWAR",
+  "producer": "Fruits Inc.",
+  "deliverydate": "11-11-2025",
+  "items": [
+    { "label": "BioApple 2kg", "charge": "FSA2511+39", "expiredate": "20-11-2025", "units": 75, "buyprice": 2.586 },
+    { "label": "Grape 400g", "charge": "FSA2511/55", "expiredate": "20-11-2025", "units": 44, "buyprice": 2.725 },
+    { "label": "Kiwi 600g", "charge": "FSA2511+78", "expiredate": "24-11-2025", "units": 43, "buyprice": 4.269 },
+    { "label": "BioPear 1kg", "charge": "FSA2511+60", "expiredate": "28-11-2025", "units": 69, "buyprice": 0.98 },
+    { "label": "Raspberry 600g", "charge": "FSA2511+91", "expiredate": "22-11-2025", "units": 67, "buyprice": 2.996 },
+    {
+      "label": "BioCherries 1.5kg",
+      "charge": "FSA2511.45",
+      "expiredate": "28-11-2025",
+      "units": 74,
+      "buyprice": 0.967
+    },
+    { "label": "Strawberry 400g", "charge": "FSA2511.43", "expiredate": "22-11-2025", "units": 50, "buyprice": 4.097 },
+    { "label": "BioPlum 1.5kg", "charge": "FSA2511-32", "expiredate": "28-11-2025", "units": 47, "buyprice": 0.851 },
+    { "label": "BioApple 1kg", "charge": "FSA2511/67", "expiredate": "21-11-2025", "units": 57, "buyprice": 1.283 },
+    { "label": "BioTangerine 1kg", "charge": "FSA2511+50", "expiredate": "27-11-2025", "units": 75, "buyprice": 1.404 }
+  ]
+}

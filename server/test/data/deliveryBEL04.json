@@ -1,0 +1,8 @@
+{
+  "site": "BELM",
+  "producer": "Les Vergers du Nord",
+  "deliverydate": "25-11-2025",
+  "items": [
+    { "label": "BioPear 1kg", "charge": "LED5115.30", "expiredate": "07-01-2026", "units": 42, "buyprice": 1.742 }
+  ]
+}

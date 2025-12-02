@@ -1,0 +1,229 @@
+@baseUrl = http://localhost:3000
+@contentType = application/json
+
+### Health
+GET {{baseUrl}}/sapi/health
+
+############################################################
+# productcategory
+############################################################
+
+### List productcategories
+GET {{baseUrl}}/sapi/productcategory
+
+### List productcategories (mit Sort & Limit)
+GET {{baseUrl}}/sapi/productcategory?order=pcid&limit=5
+
+### Get productcategory by id
+GET {{baseUrl}}/sapi/productcategory/11
+
+### Create productcategory
+POST {{baseUrl}}/sapi/productcategory
+Content-Type: {{contentType}}
+
+{
+  "mintemp": 2.0,
+  "maxtemp": 6.0,
+  "minhumidity": 70.0,
+  "minquality": 2,
+  "isbio": false,
+  "image": "cat_demo.png"
+}
+
+### Update productcategory (PATCH)
+PATCH {{baseUrl}}/sapi/productcategory/1
+Content-Type: {{contentType}}
+
+{
+  "image": "cat_chilled_v2.png"
+}
+
+############################################################
+# product
+############################################################
+
+### List products
+GET {{baseUrl}}/sapi/product
+
+### List products (Filter + Pagination)
+GET {{baseUrl}}/sapi/product?limit=10&offset=0&order=label
+
+### Get product by id
+GET {{baseUrl}}/sapi/product/1
+
+### Create product (pcid muss existieren)
+POST {{baseUrl}}/sapi/product
+Content-Type: {{contentType}}
+
+{
+  "label": "Demoprodukt 1L",
+  "pcid": 2,
+  "image": null,
+  "handlingunit": 1,
+  "numofhaun": 12,
+  "kgperunit": 1,
+  "sellprice": 1.49
+}
+
+### Update product price
+PATCH {{baseUrl}}/sapi/product/1
+Content-Type: {{contentType}}
+
+{
+  "sellprice": 3.79
+}
+
+############################################################
+# producer
+############################################################
+
+### List producers
+GET {{baseUrl}}/sapi/producer?order=producerid%20asc
+
+### Get producer by id
+GET {{baseUrl}}/sapi/producer/1
+
+### Create producer
+POST {{baseUrl}}/sapi/producer
+Content-Type: {{contentType}}
+
+{
+  "name": "Demo Producer GmbH",
+  "country": "AUT",
+  "city": "Linz",
+  "address": "Industriestraße 5",
+  "image": null,
+  "year": 2012
+}
+
+### Update producer
+PATCH {{baseUrl}}/sapi/producer/1
+Content-Type: {{contentType}}
+
+{
+  "city": "Salzburg-Gnigl"
+}
+
+############################################################
+# producerproduct (Junction-Tabelle)
+############################################################
+
+### List producerproduct mappings
+GET {{baseUrl}}/sapi/producerproduct?limit=20
+
+### Add mapping (producerid ↔ productid müssen existieren)
+POST {{baseUrl}}/sapi/producerproduct
+Content-Type: {{contentType}}
+
+{
+  "producerid": 1,
+  "productid": 3
+}
+
+############################################################
+# batch
+############################################################
+
+### List batches
+GET {{baseUrl}}/sapi/batch?order=batchid%20asc
+
+### Get batch by id
+GET {{baseUrl}}/sapi/batch/1
+
+### Create batch (producerid muss existieren)
+POST {{baseUrl}}/sapi/batch
+Content-Type: {{contentType}}
+
+{
+  "producerid": 1,
+  "deliverydate": "2025-10-24"
+}
+
+### Update batch (Lieferdatum)
+PATCH {{baseUrl}}/sapi/batch/1
+Content-Type: {{contentType}}
+
+{
+  "deliverydate": "2025-10-25"
+}
+
+############################################################
+# batchitem
+############################################################
+
+### List batchitems
+GET {{baseUrl}}/sapi/batchitem
+
+### Get batchitem by id
+GET {{baseUrl}}/sapi/batchitem/1
+
+### Create batchitem
+# Erfordert gültige batchid & productid
+POST {{baseUrl}}/sapi/batchitem
+Content-Type: {{contentType}}
+
+{
+  "batchid": 1,
+  "productid": 2,
+  "chargeid": "CHG9000001",
+  "expiredate": "2025-12-31",
+  "units": 50,
+  "buyprice": 0.60
+}
+
+### Update batchitem (Preis/Units)
+PATCH {{baseUrl}}/sapi/batchitem/1
+Content-Type: {{contentType}}
+
+{
+  "units": 120,
+  "buyprice": 1.95
+}
+
+############################################################
+# slotentry (GENERATED ALWAYS ID → keine ID im POST mitgeben!)
+############################################################
+
+### List slotentries
+GET {{baseUrl}}/sapi/slotentry?limit=20&order=slotentryid
+
+### Create slotentry
+# slid muss existieren (z. B. 'AUTWAR1U201'), biid muss existieren
+POST {{baseUrl}}/sapi/slotentry
+Content-Type: {{contentType}}
+
+{
+  "slid": "AUTWAR1U201",
+  "biid": 1,
+  "unitscount": 10
+}
+
+### Update slotentry (z. B. unitscount)
+# Ersetze :id durch die echte slotentryid aus der List-Response
+PATCH {{baseUrl}}/sapi/slotentry/:id
+Content-Type: {{contentType}}
+
+{
+  "unitscount": 12
+}
+
+### Delete slotentry
+# Ersetze :id durch echte slotentryid
+DELETE {{baseUrl}}/sapi/slotentry/:id
+
+
+############################################################
+# Bonus: nur lesen (bereits gefüllt in deinem Dump)
+############################################################
+
+### Warehouses
+GET {{baseUrl}}/sapi/warehouse?limit=10&order=wid%20asc
+
+### Storage
+GET {{baseUrl}}/sapi/storage?limit=10&order=storageid%20asc
+
+### Slots für ein Storage (z. B. storageid=3)
+GET {{baseUrl}}/sapi/slot?storageid=eq.3&order=slid%20asc
+
+### Sites
+GET {{baseUrl}}/sapi/site?order=siteid%20asc
